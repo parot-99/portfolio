@@ -3,12 +3,10 @@ import WinBox from 'winbox/src/js/winbox'
 const generateWinBox = (title, ref) => {
   new WinBox({
     title: title,
-    width: '600px',
+    width: '500px',
     height: '400px',
-    top: 150,
-    right: 50,
-    bottom: 50,
-    left: 250,
+    x: 'center',
+    y: 'center',
     mount: ref.current,
     onfocus: function () {
       this.setBackground('#00aa00')
