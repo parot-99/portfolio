@@ -71,3 +71,9 @@ nav ul li, .flexed ul li {
   color: var(--prim-text-color);
   cursor: pointer;
 }
+
+@media only screen and (max-width: 500px) {
+  nav {
+    width: 50%;
+  }
+}
