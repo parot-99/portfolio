@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import './App.css'
 import 'winbox/dist/css/winbox.min.css'
 import WinBox from 'winbox/src/js/winbox'
+import FindMe from './components/FindMe'
 
 function App() {
   const aboutContentRef = useRef()
@@ -61,24 +62,16 @@ function App() {
         <h1>
           Ahmed:$ <span className="cursor">|</span>
         </h1>
-        <h3>Find me online:</h3>
-        <ul>
-          <li>
-            <a href="/" target="_blank">
-              Github
-            </a>
-          </li>
-          <li>
-            <a href="/" target="_blank">
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a href="/" target="_blank">
-              LinkedIn
-            </a>
-          </li>
+        <h3>Projects:</h3>
+        <ul className="grid">
+          <li>Covid-19...</li>
+          <li>EliteOutfits</li>
+          <li>TwitterClone</li>
+          <li>Steve</li>
+          <li>TicTacToe</li>
         </ul>
+        <FindMe />
+    
       </section>
       <article className="hidden">
         <div id="about-content" ref={aboutContentRef}>
@@ -97,11 +90,11 @@ function App() {
           <h2>
             contact-me:$ <span className="cursor">|</span>
           </h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-            repellat iste odio aut ullam quos!
-          </p>
+          <p>You can contact me at the email and phone number below</p>
+          <ul>
+            <li>Phone: 05318876651</li>
+            <li>Email: ahmed-public@hotmail.com</li>
+          </ul>
         </div>
       </article>
     </main>
