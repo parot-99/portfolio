@@ -1,61 +1,32 @@
-import { useRef } from 'react'
 import './App.css'
 import 'winbox/dist/css/winbox.min.css'
-import WinBox from 'winbox/src/js/winbox'
 import FindMe from './components/FindMe'
+import WinBoxItem from './components/WinBoxItem'
 
 function App() {
-  const aboutContentRef = useRef()
-  const contactContentRef = useRef()
-
-  const aboutClicked = () => {
-    new WinBox({
-      title: 'About Me',
-      width: '600px',
-      height: '400px',
-      top: 150,
-      right: 50,
-      bottom: 50,
-      left: 250,
-      mount: aboutContentRef.current,
-      onfocus: function () {
-        this.setBackground('#00aa00')
-      },
-      onblur: function () {
-        this.setBackground('#777')
-      },
-    })
-  }
-
-  const contactClicked = () => {
-    new WinBox({
-      title: 'About Me',
-      width: '600px',
-      height: '400px',
-      top: 150,
-      right: 50,
-      bottom: 50,
-      left: 250,
-      mount: contactContentRef.current,
-      onfocus: function () {
-        this.setBackground('#00aa00')
-      },
-      onblur: function () {
-        this.setBackground('#777')
-      },
-    })
-  }
-
   return (
     <main className="container">
       <nav>
         <ul>
-          <li id="about" onClick={aboutClicked}>
-            /about
-          </li>
-          <li id="contact" onClick={contactClicked}>
-            /contact
-          </li>
+          <WinBoxItem value="/about" title="About Me" terminalTitle="about-me">
+            <p>
+              Goal-oriented, creative and motivated senior year computer
+              engineering student. During my bachelors, I worked on many side
+              projects that taught me more about the software lifecycle and the
+              newest technologies and tools used.
+            </p>
+          </WinBoxItem>
+          <WinBoxItem
+            value="/contact"
+            title="Contact Me"
+            terminalTitle="contact-me"
+          >
+            <p>You can contact me at the email and phone number below</p>
+            <ul>
+              <li>Phone: 05318876651</li>
+              <li>Email: ahmed-public@hotmail.com</li>
+            </ul>
+          </WinBoxItem>
         </ul>
       </nav>
       <section>
@@ -64,39 +35,118 @@ function App() {
         </h1>
         <h3>Projects:</h3>
         <ul className="grid">
-          <li>Covid-19...</li>
-          <li>EliteOutfits</li>
-          <li>TwitterClone</li>
-          <li>Steve</li>
-          <li>TicTacToe</li>
+          <WinBoxItem
+            value="Covid-19..."
+            title="Covid-19 Warning System"
+            terminalTitle="project"
+          >
+            <p>
+              A warning system that can detect people with/without a face mask
+              from images and videos using deep learning.
+            </p>
+            <ul>
+              <a
+                href="https://github.com/parot-99/Covid-19-Warning-System"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Code
+              </a>
+            </ul>
+          </WinBoxItem>
+          <WinBoxItem
+            value="EliteOutfits"
+            title="EliteOutfits"
+            terminalTitle="project"
+          >
+            <p>Ecommere website using nodejs and reactjs.</p>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/parot-99/EliteOutfits"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Code
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://eliteoutfits.herokuapp.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Demo
+                </a>
+              </li>
+            </ul>
+          </WinBoxItem>
+          <WinBoxItem
+            value="TwitterClone"
+            title="TwitterClone"
+            terminalTitle="project"
+          >
+            <p>A simple twitter clone using django and reactjs.</p>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/parot-99/TwitterClone"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Code
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://parot-twitter-clone.herokuapp.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Demo
+                </a>
+              </li>
+            </ul>
+          </WinBoxItem>
+          <WinBoxItem
+            value="Steve"
+            title="Steve"
+            terminalTitle="project"
+          >
+            <p>3D object using javascript and webgl API.</p>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/parot-99/Steve"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Code
+                </a>
+              </li>
+            </ul>
+          </WinBoxItem>
+          <WinBoxItem
+            value="TicTacToe"
+            title="TicTacToe"
+            terminalTitle="project"
+          >
+            <p>Simple TocTacToe using java.</p>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/parot-99/TicTacToe"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Code
+                </a>
+              </li>
+            </ul>
+          </WinBoxItem>
         </ul>
         <FindMe />
-    
       </section>
-      <article className="hidden">
-        <div id="about-content" ref={aboutContentRef}>
-          <h2>
-            about-me:$ <span className="cursor">|</span>
-          </h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-            repellat iste odio aut ullam quos!
-          </p>
-        </div>
-      </article>
-      <article className="hidden">
-        <div id="contact-content" ref={contactContentRef}>
-          <h2>
-            contact-me:$ <span className="cursor">|</span>
-          </h2>
-          <p>You can contact me at the email and phone number below</p>
-          <ul>
-            <li>Phone: 05318876651</li>
-            <li>Email: ahmed-public@hotmail.com</li>
-          </ul>
-        </div>
-      </article>
     </main>
   )
 }

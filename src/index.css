@@ -61,13 +61,13 @@ nav {
   width: 30%;
 }
 
-ul {
+nav ul, .flexed {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-ul li {
+nav ul li, .flexed ul li {
   color: var(--prim-text-color);
   cursor: pointer;
 }

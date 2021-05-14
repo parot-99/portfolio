@@ -4,7 +4,7 @@ const FindMe = () => {
   return (
     <Fragment>
       <h3>Find me online:</h3>
-      <ul>
+      <ul className="flexed">
         <li>
           <a
             href="https://github.com/parot-99"

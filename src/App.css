@@ -40,4 +40,9 @@
   grid-template-rows: auto;
   column-gap: 1rem;
   row-gap: 1rem;
+  color: var(--prim-text-color);
+}
+
+.grid li {
+  cursor: pointer;
 }
