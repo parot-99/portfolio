@@ -3,7 +3,7 @@
 :root {
   --prim-text-color: #00aa00;
   --light-text-color: #cccccc;
-  --background-color: #333333;
+  --background-color: #161616;
 }
 
 * {
@@ -57,23 +57,23 @@ ul {
   list-style-type: none;
 }
 
-nav {
+header {
   width: 30%;
 }
 
-nav ul, .flexed {
+header ul, .flexed {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-nav ul li, .flexed ul li {
+header ul li, .flexed ul li {
   color: var(--prim-text-color);
   cursor: pointer;
 }
 
 @media only screen and (max-width: 500px) {
-  nav {
+  header {
     width: 50%;
   }
 }
